@@ -1,0 +1,14 @@
+--- origsrc/libqtxdg-1.2.0/CMakeLists.txt	2015-03-29 04:30:27.000000000 -0500
++++ src/libqtxdg-1.2.0/CMakeLists.txt	2015-04-28 18:24:01.986833600 -0500
+@@ -299,7 +299,10 @@ set_target_properties(${QTXDGX_LIBRARY_N
+ include(create_portable_headers)
+ create_portable_headers(libqtxdg_PORTABLE_HEADERS ${libqtxdg_PUBLIC_CLASSES})
+ 
+-install(TARGETS ${QTXDGX_LIBRARY_NAME} DESTINATION "${CMAKE_INSTALL_LIBDIR}")
++install(TARGETS ${QTXDGX_LIBRARY_NAME}
++	LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}"
++	RUNTIME DESTINATION "bin"
++	ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}")
+ install(FILES ${libqtxdg_PUBLIC_H_FILES} DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/${QTXDGX_FILE_NAME}")
+ 
+ if (USE_QT5)
